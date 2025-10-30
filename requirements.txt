@@ -1,0 +1,4 @@
+balderhub-crud==0.1.dev14+g8483c92
+balderhub-data==0.0.0b15
+baldertest==0.1.0
+dacite==1.9.2
