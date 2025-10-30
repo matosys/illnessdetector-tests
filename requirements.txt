@@ -1,4 +1,7 @@
-balderhub-crud==0.1.dev14+g8483c92
-balderhub-data==0.0.0b15
+balderhub-crud==0.0.1b0
+balderhub-data==0.0.1b0
+balderhub-selenium==0.0.1b0
+balderhub-html==0.0.1b0
 baldertest==0.1.0
 dacite==1.9.2
+requests==2.32.5
