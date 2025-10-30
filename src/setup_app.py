@@ -26,6 +26,11 @@ class SetupApp(balder.Setup):
         creator = setup_features.SingleQuestionCreator()
         example = setup_features.ExampleQuestionProvider()
 
+    @balder.connect('InternDevice', over_connection=balder.Connection)
+    class ClientRest(balder.Device):
+        creator = setup_features.SingleQuestionCreatorOverRest()
+        example = setup_features.ExampleQuestionProvider()
+
     @balder.fixture('session')
     def resources(self):
         self.ClientBrowser.selenium.create()
