@@ -1,0 +1,29 @@
+name: test.yml
+on:
+  push:
+    branches:
+      - main
+      - adding-validation-of-api
+  pull_request:
+    branches:
+      - main
+      - adding-validation-of-api
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Docker Compose
+        uses: docker/setup-compose-action@v1
+      - name: Start Docker Environment
+        run: |
+          docker compose up -d
+      - name: Run Tests
+        run: |
+          docker compose run test balder --working-dir src
+      - name: Cleanup Docker
+        if: always()
+        run: |
+          docker compose down
